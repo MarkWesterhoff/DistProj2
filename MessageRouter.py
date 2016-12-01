@@ -79,7 +79,7 @@ class MessageRouter():
 
     def broadcast_to_peers(self, message):
         self.broadcast(message, self.peerconnections)
-        self.broadcast_to_cli(self, message)
+        self.broadcast_to_cli(message)
 
     def broadcast_to_higher_pids(self, message):
         connections = {k:v for k,v in self.peerconnections.items() if k > self.my_pid}
